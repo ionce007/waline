@@ -27,8 +27,8 @@ export const DEFAULT_REACTION = [
 
 export const defaultUploadImage = (file: File): Promise<string> =>
   new Promise((resolve, reject) => {
-    if (file.size > 128 * 1000)
-      return reject(new Error('File too large! File size limit 128KB'));
+    if (file.size > 1024 * 1000)
+      return reject(new Error('File too large! File size limit 1MB'));
 
     const reader = new FileReader();
 
